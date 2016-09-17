@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="parser">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/src/simpl/parser/JFlex.jar!/" />
+      <root url="jar://$PROJECT_DIR$/src/simpl/parser/java-cup-11a.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
