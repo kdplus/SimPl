@@ -26,13 +26,17 @@ public class App extends BinaryExpr {
 
     @Override
     public TypeResult typecheck(TypeEnv E) throws TypeError {
-        // TODO
+
         return null;
     }
 
     @Override
     public Value eval(State s) throws RuntimeError {
         // TODO
-        return null;
+        Value f = l.eval(s);
+        Value v = r.eval(s);
+        Env E = new Env(s.E, ((FunValue)f).x, v);
+        State s1 = s.of(E, s.M, s.p);
+        return ((FunValue)f).e.eval(s1);
     }
 }

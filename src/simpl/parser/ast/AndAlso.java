@@ -23,12 +23,19 @@ public class AndAlso extends BinaryExpr {
     @Override
     public TypeResult typecheck(TypeEnv E) throws TypeError {
         // TODO
-        return null;
+        TypeError e = new TypeError("AndAlso only can handle BoolType!");
+        TypeResult lt = l.typecheck(E);
+        TypeResult rt = r.typecheck(E);
+        if (lt.t == Type.BOOL && rt.t == Type.BOOL) return TypeResult.of(lt.s.compose(rt.s), Type.BOOL);
+        else throw e;
     }
 
     @Override
     public Value eval(State s) throws RuntimeError {
         // TODO
-        return null;
+        BoolValue t = new BoolValue(true);
+        BoolValue f = new BoolValue(false);
+        if (l.eval(s).equals(t)) return r.eval(s);
+        return f;
     }
 }

@@ -15,6 +15,11 @@ public class BoolValue extends Value {
     @Override
     public boolean equals(Object other) {
         // TODO
+        if (other == null) return false;
+        if (other instanceof BoolValue){
+            //BoolValue a = (BoolValue)other;
+            if (((BoolValue)other).b == b) return true;
+        }
         return false;
     }
 }

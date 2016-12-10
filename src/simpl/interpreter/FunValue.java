@@ -22,6 +22,12 @@ public class FunValue extends Value {
     @Override
     public boolean equals(Object other) {
         // TODO
-        return false;
+        // Maybe it should not equals
+        if (other == null) return false;
+        if (!(other instanceof FunValue)) return false;
+        if (((FunValue)other).e != e) return false;
+        if (((FunValue)other).x != x) return false;
+        if (((FunValue)other).E != E) return false;
+        return true;
     }
 }
