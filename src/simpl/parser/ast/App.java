@@ -1,10 +1,6 @@
 package simpl.parser.ast;
 
-import simpl.interpreter.Env;
-import simpl.interpreter.FunValue;
-import simpl.interpreter.RuntimeError;
-import simpl.interpreter.State;
-import simpl.interpreter.Value;
+import simpl.interpreter.*;
 import simpl.parser.Symbol;
 import simpl.typing.ArrowType;
 import simpl.typing.Substitution;
@@ -27,6 +23,7 @@ public class App extends BinaryExpr {
     @Override
     public TypeResult typecheck(TypeEnv E) throws TypeError {
 
+
         return null;
     }
 
@@ -35,8 +32,17 @@ public class App extends BinaryExpr {
         // TODO
         Value f = l.eval(s);
         Value v = r.eval(s);
-        Env E = new Env(s.E, ((FunValue)f).x, v);
-        State s1 = s.of(E, s.M, s.p);
-        return ((FunValue)f).e.eval(s1);
+        //System.out.println(f.toString());
+        //System.out.println(v.toString());
+        if (f instanceof FunValue) {
+            Env E = new Env(((FunValue) f).E, ((FunValue) f).x, v);
+            State s1 = s.of(E, s.M, s.p);
+            return ((FunValue)f).e.eval(s1);
+        } else {
+            FunValue nf = new FunValue (s.E, ((Fn)((RecValue)f).e).x, ((Fn)((RecValue)f).e).e);
+            Env E = new Env(((FunValue)nf).E, ((FunValue)nf).x, v);
+            State s1 = s.of(E, s.M, s.p);
+            return (nf).e.eval(s1);
+        }
     }
 }

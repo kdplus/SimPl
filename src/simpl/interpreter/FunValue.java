@@ -16,7 +16,7 @@ public class FunValue extends Value {
     }
 
     public String toString() {
-        return "fun";
+        return "fun " + x.toString() + " -> " + e.toString();
     }
 
     @Override
