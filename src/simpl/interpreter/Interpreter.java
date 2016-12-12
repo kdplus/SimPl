@@ -43,7 +43,7 @@ public class Interpreter {
     public static void main(String[] args) {
         interpret("doc/examples/plus.spl");
         interpret("doc/examples/factorial.spl");
-        //interpret("doc/examples/gcd1.spl");
+        interpret("doc/examples/gcd1.spl");
         //interpret("doc/examples/gcd2.spl");
         //interpret("doc/examples/max.spl");
         //interpret("doc/examples/sum.spl");

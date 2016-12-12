@@ -2,16 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6eeab3bc-eafc-4c97-a62f-9decac340188" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/simpl/interpreter/FunValue.java" afterPath="$PROJECT_DIR$/src/simpl/interpreter/FunValue.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/examples/factorial.spl" afterPath="$PROJECT_DIR$/doc/examples/factorial.spl" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/simpl/interpreter/Interpreter.java" afterPath="$PROJECT_DIR$/src/simpl/interpreter/Interpreter.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/simpl/parser/ast/App.java" afterPath="$PROJECT_DIR$/src/simpl/parser/ast/App.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/simpl/parser/ast/Cond.java" afterPath="$PROJECT_DIR$/src/simpl/parser/ast/Cond.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/simpl/parser/ast/Eq.java" afterPath="$PROJECT_DIR$/src/simpl/parser/ast/Eq.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/simpl/parser/ast/Fn.java" afterPath="$PROJECT_DIR$/src/simpl/parser/ast/Fn.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/simpl/parser/ast/Let.java" afterPath="$PROJECT_DIR$/src/simpl/parser/ast/Let.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/simpl/parser/ast/Name.java" afterPath="$PROJECT_DIR$/src/simpl/parser/ast/Name.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/simpl/parser/ast/Rec.java" afterPath="$PROJECT_DIR$/src/simpl/parser/ast/Rec.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/simpl/parser/ast/Mod.java" afterPath="$PROJECT_DIR$/src/simpl/parser/ast/Mod.java" />
     </list>
     <ignored path="skeleton.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -33,11 +26,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Env.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Env.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/simpl/interpreter/Env.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="432">
-              <caret line="35" column="0" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
+            <state relative-caret-position="162">
+              <caret line="16" column="40" selection-start-line="16" selection-start-column="40" selection-end-line="16" selection-end-column="40" />
               <folding />
             </state>
           </provider>
@@ -63,34 +56,44 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Mul.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/simpl/parser/ast/Mul.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="252">
-              <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Group.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/simpl/parser/ast/Group.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="26" column="0" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="Interpreter.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/simpl/interpreter/Interpreter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="741">
-              <caret line="57" column="0" selection-start-line="57" selection-start-column="0" selection-end-line="57" selection-end-column="0" />
+            <state relative-caret-position="417">
+              <caret line="45" column="7" selection-start-line="45" selection-start-column="7" selection-end-line="45" selection-end-column="7" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="gcd2.spl" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/doc/examples/gcd2.spl">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="gcd1.spl" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/doc/examples/gcd1.spl">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Mod.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/simpl/parser/ast/Mod.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="234">
+              <caret line="20" column="40" selection-start-line="20" selection-start-column="40" selection-end-line="20" selection-end-column="40" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -107,31 +110,21 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="Add.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/simpl/parser/ast/Add.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="234">
+              <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="factorial.spl" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/doc/examples/factorial.spl">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Eq.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/simpl/parser/ast/Eq.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Name.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/simpl/parser/ast/Name.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="378">
-              <caret line="33" column="0" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
+            <state relative-caret-position="18">
+              <caret line="1" column="9" selection-start-line="1" selection-start-column="9" selection-end-line="1" selection-end-column="9" />
               <folding />
             </state>
           </provider>
@@ -173,11 +166,13 @@
         <option value="$PROJECT_DIR$/src/simpl/parser/ast/Name.java" />
         <option value="$PROJECT_DIR$/src/simpl/parser/ast/Let.java" />
         <option value="$PROJECT_DIR$/doc/examples/plus.spl" />
-        <option value="$PROJECT_DIR$/src/simpl/interpreter/Interpreter.java" />
         <option value="$PROJECT_DIR$/src/simpl/parser/ast/Rec.java" />
         <option value="$PROJECT_DIR$/src/simpl/parser/ast/Eq.java" />
         <option value="$PROJECT_DIR$/src/simpl/parser/ast/Cond.java" />
         <option value="$PROJECT_DIR$/src/simpl/parser/ast/App.java" />
+        <option value="$PROJECT_DIR$/doc/examples/factorial.spl" />
+        <option value="$PROJECT_DIR$/src/simpl/interpreter/Interpreter.java" />
+        <option value="$PROJECT_DIR$/src/simpl/parser/ast/Mod.java" />
       </list>
     </option>
   </component>
@@ -884,12 +879,12 @@
       <workItem from="1480699391974" duration="2315000" />
       <workItem from="1481362944361" duration="22044000" />
       <workItem from="1481401322451" duration="30000" />
-      <workItem from="1481563802939" duration="5939000" />
+      <workItem from="1481563802939" duration="6110000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="39413000" />
+    <option name="totallyTimeSpent" value="39584000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -985,27 +980,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/simpl/typing/Substitution.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="622">
-          <caret line="48" column="19" selection-start-line="48" selection-start-column="19" selection-end-line="48" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/simpl/parser/ast/Unit.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/simpl/parser/simpl.lex">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/simpl/parser/simpl.grm">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1162,14 +1136,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="72">
           <caret line="12" column="22" selection-start-line="12" selection-start-column="22" selection-end-line="12" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/simpl/parser/ast/Add.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1367,17 +1333,39 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/simpl/interpreter/Interpreter.java">
+    <entry file="file://$PROJECT_DIR$/src/simpl/interpreter/Env.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="741">
-          <caret line="57" column="0" selection-start-line="57" selection-start-column="0" selection-end-line="57" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="162">
+          <caret line="16" column="40" selection-start-line="16" selection-start-column="40" selection-end-line="16" selection-end-column="40" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/doc/examples/factorial.spl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="18">
+          <caret line="1" column="9" selection-start-line="1" selection-start-column="9" selection-end-line="1" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/simpl/parser/ast/Add.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="234">
+          <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/simpl/parser/ast/Mod.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="234">
+          <caret line="20" column="40" selection-start-line="20" selection-start-column="40" selection-end-line="20" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/doc/examples/gcd1.spl">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -1385,10 +1373,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/simpl/interpreter/Env.java">
+    <entry file="file://$PROJECT_DIR$/src/simpl/interpreter/Interpreter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="432">
-          <caret line="35" column="0" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
+        <state relative-caret-position="417">
+          <caret line="45" column="7" selection-start-line="45" selection-start-column="7" selection-end-line="45" selection-end-column="7" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/doc/examples/gcd2.spl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>

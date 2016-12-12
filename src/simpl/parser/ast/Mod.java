@@ -18,6 +18,7 @@ public class Mod extends ArithExpr {
     @Override
     public Value eval(State s) throws RuntimeError {
         // TODO
-        return null;
+        int v = ((IntValue)l.eval(s)).n % ((IntValue)r.eval(s)).n;
+        return new IntValue(v);
     }
 }
