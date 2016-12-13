@@ -1,9 +1,7 @@
 package simpl.parser.ast;
 
-import simpl.interpreter.RecValue;
-import simpl.interpreter.RuntimeError;
-import simpl.interpreter.State;
-import simpl.interpreter.Value;
+import com.sun.org.apache.regexp.internal.RE;
+import simpl.interpreter.*;
 import simpl.parser.Symbol;
 import simpl.typing.Type;
 import simpl.typing.TypeEnv;
@@ -31,6 +29,12 @@ public class Name extends Expr {
     @Override
     public Value eval(State s) throws RuntimeError {
         // TODO
+        Value v = s.E.get(x);
+        if (v instanceof  RecValue) {
+            RecValue nv = (RecValue)v;
+            Rec rec = new Rec(nv.x, nv.e);
+            return rec.eval(State.of(nv.E, s.M, s.p));
+        }
         return s.E.get(x);
     }
 }

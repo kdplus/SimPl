@@ -32,17 +32,8 @@ public class App extends BinaryExpr {
         // TODO
         Value f = l.eval(s);
         Value v = r.eval(s);
-        //System.out.println(f.toString());
-        //System.out.println(v.toString());
-        if (f instanceof FunValue) {
-            Env E = new Env(((FunValue) f).E, ((FunValue) f).x, v);
-            State s1 = s.of(E, s.M, s.p);
-            return ((FunValue)f).e.eval(s1);
-        } else {
-            FunValue nf = new FunValue (s.E, ((Fn)((RecValue)f).e).x, ((Fn)((RecValue)f).e).e);
-            Env E = new Env(((FunValue)nf).E, ((FunValue)nf).x, v);
-            State s1 = s.of(E, s.M, s.p);
-            return (nf).e.eval(s1);
-        }
+        Env E = new Env(((FunValue) f).E, ((FunValue) f).x, v);
+        State s1 = State.of(E, s.M, s.p);
+        return ((FunValue)f).e.eval(s1);
     }
 }

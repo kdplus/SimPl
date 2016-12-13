@@ -1,9 +1,6 @@
 package simpl.parser.ast;
 
-import simpl.interpreter.BoolValue;
-import simpl.interpreter.RuntimeError;
-import simpl.interpreter.State;
-import simpl.interpreter.Value;
+import simpl.interpreter.*;
 import simpl.typing.Substitution;
 import simpl.typing.Type;
 import simpl.typing.TypeEnv;
@@ -29,6 +26,8 @@ public class Not extends UnaryExpr {
     @Override
     public Value eval(State s) throws RuntimeError {
         // TODO
-        return null;
+        Value v = e.eval(s);
+        if (v.equals(new IntValue(0))) return new BoolValue(true);
+        return new BoolValue(false);
     }
 }

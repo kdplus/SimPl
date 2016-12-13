@@ -38,6 +38,7 @@ public class Rec extends Expr {
         // TODO
         RecValue v = new RecValue(s.E, x, e);
         Env E = new Env(s.E, x, v);
-        return e.eval(State.of(E, s.M, s.p));
+        Value hey = e.eval(State.of(E, s.M, s.p));
+        return  hey;
     }
 }

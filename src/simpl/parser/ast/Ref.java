@@ -1,9 +1,6 @@
 package simpl.parser.ast;
 
-import simpl.interpreter.RefValue;
-import simpl.interpreter.RuntimeError;
-import simpl.interpreter.State;
-import simpl.interpreter.Value;
+import simpl.interpreter.*;
 import simpl.typing.RefType;
 import simpl.typing.TypeEnv;
 import simpl.typing.TypeError;
@@ -28,6 +25,10 @@ public class Ref extends UnaryExpr {
     @Override
     public Value eval(State s) throws RuntimeError {
         // TODO
-        return null;
+        int prev_p = s.p.get();
+        s.p.set(prev_p + 1);
+        Value v = e.eval(s);
+        s.M.put(prev_p, v);
+        return new RefValue(prev_p);
     }
 }

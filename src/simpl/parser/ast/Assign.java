@@ -30,8 +30,9 @@ public class Assign extends BinaryExpr {
     @Override
     public Value eval(State s) throws RuntimeError {
         // TODO
+        Value ref = l.eval(s);
         Value v = r.eval(s);
-
+        s.M.put(((RefValue)ref).p, v);
         return Value.UNIT;
     }
 }
