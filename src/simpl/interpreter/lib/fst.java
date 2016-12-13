@@ -16,6 +16,16 @@ public class fst extends FunValue {
 
     public fst() {
         // TODO
-        super(null, null, null);
+        super(Env.empty, Symbol.symbol("x"), new Expr() {
+            @Override
+            public TypeResult typecheck(TypeEnv E) throws TypeError {
+                return null;
+            }
+
+            @Override
+            public Value eval(State s) throws RuntimeError {
+                return ((PairValue) s.E.get(Symbol.symbol("x"))).v1;
+            }
+        });
     }
 }

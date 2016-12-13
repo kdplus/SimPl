@@ -1,11 +1,6 @@
 package simpl.interpreter.pcf;
 
-import simpl.interpreter.Env;
-import simpl.interpreter.FunValue;
-import simpl.interpreter.IntValue;
-import simpl.interpreter.RuntimeError;
-import simpl.interpreter.State;
-import simpl.interpreter.Value;
+import simpl.interpreter.*;
 import simpl.parser.Symbol;
 import simpl.parser.ast.Expr;
 import simpl.typing.TypeEnv;
@@ -16,6 +11,18 @@ public class pred extends FunValue {
 
     public pred() {
         // TODO
-        super(null, null, null);
+        super(Env.empty, Symbol.symbol("x"), new Expr() {
+            @Override
+            public TypeResult typecheck(TypeEnv E) throws TypeError {
+                return null;
+            }
+
+            @Override
+            public Value eval(State s) throws RuntimeError {
+                IntValue v = (IntValue) s.E.get(Symbol.symbol("x"));
+                if (v.n <= 0) return new IntValue(0);
+                return new IntValue(v.n - 1);
+            }
+        });
     }
 }

@@ -17,6 +17,18 @@ public class iszero extends FunValue {
 
     public iszero() {
         // TODO
-        super(null, null, null);
+        super(Env.empty, Symbol.symbol("x"), new Expr() {
+            @Override
+            public TypeResult typecheck(TypeEnv E) throws TypeError {
+                return null;
+            }
+
+            @Override
+            public Value eval(State s) throws RuntimeError {
+                IntValue v = (IntValue) s.E.get(Symbol.symbol("x"));
+                if (v.n == 0) return new BoolValue(true);
+                return new BoolValue(false);
+            }
+        });
     }
 }
