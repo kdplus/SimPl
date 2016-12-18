@@ -18,8 +18,10 @@ public abstract class ArithExpr extends BinaryExpr {
         // TODO
         TypeError e = new TypeError("Both two sides need to be arith type!");
         TypeResult lt = l.typecheck(E);
-        TypeResult rt = r.typecheck(E);
-        if (lt.t == Type.INT && rt.t == Type.INT) return TypeResult.of(lt.s.compose(rt.s), Type.INT);
-        else throw e;
+        TypeResult rt = r.typecheck(lt.s.compose(E));
+        Substitution s = rt.s.compose(lt.s);
+        s = s.apply(lt.t).unify(Type.INT).compose(s);
+        s = s.apply(rt.t).unify(Type.INT).compose(s);
+        return TypeResult.of(s, Type.INT);
     }
 }

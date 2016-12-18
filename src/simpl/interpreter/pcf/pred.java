@@ -3,6 +3,7 @@ package simpl.interpreter.pcf;
 import simpl.interpreter.*;
 import simpl.parser.Symbol;
 import simpl.parser.ast.Expr;
+import simpl.typing.ArrowType;
 import simpl.typing.TypeEnv;
 import simpl.typing.TypeError;
 import simpl.typing.TypeResult;
@@ -14,7 +15,7 @@ public class pred extends FunValue {
         super(Env.empty, Symbol.symbol("x"), new Expr() {
             @Override
             public TypeResult typecheck(TypeEnv E) throws TypeError {
-                return null;
+                return TypeResult.of(((ArrowType) (E.get(Symbol.symbol("pred")))).t2);
             }
 
             @Override

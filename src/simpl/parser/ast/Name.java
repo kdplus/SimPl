@@ -3,10 +3,7 @@ package simpl.parser.ast;
 import com.sun.org.apache.regexp.internal.RE;
 import simpl.interpreter.*;
 import simpl.parser.Symbol;
-import simpl.typing.Type;
-import simpl.typing.TypeEnv;
-import simpl.typing.TypeError;
-import simpl.typing.TypeResult;
+import simpl.typing.*;
 
 public class Name extends Expr {
 
@@ -23,7 +20,10 @@ public class Name extends Expr {
     @Override
     public TypeResult typecheck(TypeEnv E) throws TypeError {
         // TODO
-        return null;
+        if (E.get(x) == null) {
+            throw new TypeError("Cannot find var name\n");
+        }
+        return TypeResult.of(E.get(x));
     }
 
     @Override

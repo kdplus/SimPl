@@ -12,6 +12,7 @@ import simpl.parser.ast.Pair;
 import simpl.typing.TypeEnv;
 import simpl.typing.TypeError;
 import simpl.typing.TypeResult;
+import simpl.typing.ArrowType;
 
 public class snd extends FunValue {
 
@@ -20,7 +21,7 @@ public class snd extends FunValue {
         super(Env.empty, Symbol.symbol("x"), new Expr() {
             @Override
             public TypeResult typecheck(TypeEnv E) throws TypeError {
-                return null;
+                return TypeResult.of(((ArrowType) (E.get(Symbol.symbol("snd")))).t2);
             }
 
             @Override

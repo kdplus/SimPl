@@ -22,9 +22,15 @@ public class App extends BinaryExpr {
 
     @Override
     public TypeResult typecheck(TypeEnv E) throws TypeError {
+        TypeResult lt = l.typecheck(E);
+        TypeResult rt = r.typecheck(lt.s.compose(E));
 
-
-        return null;
+        TypeVar t1 = new TypeVar(true);
+        Type t2 = rt.t;
+        ArrowType at = new ArrowType(t2, t1);
+        Substitution s = rt.s.compose(lt.s);
+        s = s.apply(lt.t).unify(at).compose(s);
+        return TypeResult.of(s, s.apply(t1));
     }
 
     @Override

@@ -11,6 +11,7 @@ import simpl.parser.ast.Expr;
 import simpl.typing.TypeEnv;
 import simpl.typing.TypeError;
 import simpl.typing.TypeResult;
+import simpl.typing.ArrowType;
 
 public class tl extends FunValue {
 
@@ -19,7 +20,7 @@ public class tl extends FunValue {
         super(Env.empty, Symbol.symbol("x"), new Expr() {
             @Override
             public TypeResult typecheck(TypeEnv E) throws TypeError {
-                return null;
+                return TypeResult.of(((ArrowType) (E.get(Symbol.symbol("tl")))).t2);
             }
 
             @Override

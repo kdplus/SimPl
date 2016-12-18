@@ -19,7 +19,9 @@ public class Ref extends UnaryExpr {
     @Override
     public TypeResult typecheck(TypeEnv E) throws TypeError {
         // TODO
-        return null;
+        TypeResult tr = e.typecheck(E);
+        // do not need apply ...?
+        return TypeResult.of(tr.s, new RefType(tr.s.apply(tr.t)));
     }
 
     @Override

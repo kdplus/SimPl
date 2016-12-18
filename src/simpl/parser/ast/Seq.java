@@ -3,6 +3,7 @@ package simpl.parser.ast;
 import simpl.interpreter.RuntimeError;
 import simpl.interpreter.State;
 import simpl.interpreter.Value;
+import simpl.typing.Substitution;
 import simpl.typing.TypeEnv;
 import simpl.typing.TypeError;
 import simpl.typing.TypeResult;
@@ -20,7 +21,10 @@ public class Seq extends BinaryExpr {
     @Override
     public TypeResult typecheck(TypeEnv E) throws TypeError {
         // TODO
-        return null;
+        TypeResult lt = l.typecheck(E);
+        TypeResult rt = r.typecheck(lt.s.compose(E));
+        Substitution s = lt.s.compose(rt.s);
+        return TypeResult.of(s, s.apply(rt.t));
     }
 
     @Override

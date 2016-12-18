@@ -20,7 +20,9 @@ public class Not extends UnaryExpr {
     @Override
     public TypeResult typecheck(TypeEnv E) throws TypeError {
         // TODO
-        return null;
+        TypeResult tr = e.typecheck(E);
+        Substitution s = tr.t.unify(Type.BOOL).compose(tr.s);
+        return TypeResult.of(s, Type.BOOL);
     }
 
     @Override

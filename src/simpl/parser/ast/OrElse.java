@@ -23,7 +23,12 @@ public class OrElse extends BinaryExpr {
     @Override
     public TypeResult typecheck(TypeEnv E) throws TypeError {
         // TODO
-        return null;
+        TypeResult lt = l.typecheck(E);
+        TypeResult rt = r.typecheck(lt.s.compose(E));
+        Substitution s = rt.s.compose(lt.s);
+        s = s.apply(lt.t).unify(Type.BOOL).compose(s);
+        s = s.apply(rt.t).unify(Type.BOOL).compose(s);
+        return TypeResult.of(s, Type.BOOL);
     }
 
     @Override
