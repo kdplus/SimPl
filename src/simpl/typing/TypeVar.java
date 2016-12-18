@@ -22,7 +22,9 @@ public class TypeVar extends Type {
     @Override
     public Substitution unify(Type t) throws TypeCircularityError {
         // TODO
-        return null;
+        // check occurs
+        if (t != this && t.contains(this)) throw new TypeCircularityError();
+        return Substitution.of(this, t);
     }
 
     public String toString() {
@@ -32,12 +34,13 @@ public class TypeVar extends Type {
     @Override
     public boolean contains(TypeVar tv) {
         // TODO
-        return false;
+        return (this.name == tv.name);
     }
 
     @Override
     public Type replace(TypeVar a, Type t) {
         // TODO
-        return null;
+        if (this.name == a.name) return t;
+        return this;
     }
 }
