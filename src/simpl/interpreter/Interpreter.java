@@ -12,14 +12,18 @@ import simpl.typing.TypeError;
 
 public class Interpreter {
 
-    public void run(String filename) {
+    public int skip;
+
+    public void run(String filename, int skip) {
         try (InputStream inp = new FileInputStream(filename)) {
             Parser parser = new Parser(inp);
             java_cup.runtime.Symbol parseTree = parser.parse();
             Expr program = (Expr) parseTree.value;
             System.out.println(program.toString());
-            System.out.print("Type: ");
-            System.out.println(program.typecheck(new DefaultTypeEnv()).t);
+            if (skip == 0) {
+                System.out.print("Type: ");
+                System.out.println(program.typecheck(new DefaultTypeEnv()).t);
+            }
             System.out.print("Value: ");
             System.out.println(program.eval(new InitialState()));
             System.out.println("");
@@ -45,7 +49,13 @@ public class Interpreter {
     private static void interpret(String filename) {
         Interpreter i = new Interpreter();
         System.out.println(filename);
-        i.run(filename);
+        i.run(filename, 0);
+    }
+
+    private static void interpret(String filename, int skip) {
+        Interpreter i = new Interpreter();
+        System.out.println(filename);
+        i.run(filename, skip);
     }
 
     public static void main(String[] args) {
@@ -63,5 +73,6 @@ public class Interpreter {
         //interpret("doc/examples/pcf.fibonacci.spl");
         interpret("doc/examples/pcf.twice.spl");
         interpret("doc/examples/pcf.lists.spl");
+        interpret("doc/examples/define.spl", 1);
     }
 }

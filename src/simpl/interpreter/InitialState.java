@@ -3,10 +3,7 @@ package simpl.interpreter;
 import static simpl.parser.Symbol.symbol;
 
 import java_cup.symbol;
-import simpl.interpreter.lib.hd;
-import simpl.interpreter.lib.tl;
-import simpl.interpreter.lib.fst;
-import simpl.interpreter.lib.snd;
+import simpl.interpreter.lib.*;
 import simpl.interpreter.pcf.iszero;
 import simpl.interpreter.pcf.pred;
 import simpl.interpreter.pcf.succ;
@@ -28,6 +25,7 @@ public class InitialState extends State {
         newE = new Env(newE, Symbol.symbol("iszero"), new iszero());
         newE = new Env(newE, Symbol.symbol("pred"), new pred());
         newE = new Env(newE, Symbol.symbol("succ"), new succ());
+        newE = new Env(newE, Symbol.symbol("defmacro"), new defmacro());
         return newE;
     }
 }

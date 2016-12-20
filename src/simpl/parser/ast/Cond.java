@@ -4,6 +4,7 @@ import simpl.interpreter.BoolValue;
 import simpl.interpreter.RuntimeError;
 import simpl.interpreter.State;
 import simpl.interpreter.Value;
+import simpl.parser.Symbol;
 import simpl.typing.Substitution;
 import simpl.typing.Type;
 import simpl.typing.TypeEnv;
@@ -40,6 +41,7 @@ public class Cond extends Expr {
     @Override
     public Value eval(State s) throws RuntimeError {
         // TODO
+
         BoolValue v = (BoolValue) e1.eval(s);
         if (v.equals(new BoolValue(true))) return e2.eval(s);
         return e3.eval(s);

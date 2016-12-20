@@ -1,8 +1,6 @@
 package simpl.parser.ast;
 
-import simpl.interpreter.RuntimeError;
-import simpl.interpreter.State;
-import simpl.interpreter.Value;
+import simpl.interpreter.*;
 import simpl.typing.Substitution;
 import simpl.typing.TypeEnv;
 import simpl.typing.TypeError;
@@ -30,7 +28,12 @@ public class Seq extends BinaryExpr {
     @Override
     public Value eval(State s) throws RuntimeError {
         // TODO
-        l.eval(s);
+        Value v = l.eval(s);
+        if (v instanceof DefineValue) {
+            Env E = new Env(s.E, ((DefineValue) v).x, v);
+            Value v2 = r.eval(State.of(E, s.M, s.p));
+            return v2;
+        }
         Value v2 = r.eval(s);
         return v2;
     }

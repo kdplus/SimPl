@@ -37,6 +37,31 @@ public class App extends BinaryExpr {
     public Value eval(State s) throws RuntimeError {
         // TODO
         Value f = l.eval(s);
+        if (f instanceof DefineValue) {
+            if (((DefineValue) f).getName == 0 && r instanceof Name){
+                ((DefineValue) f).x = Symbol.symbol(r.toString());
+                ((DefineValue) f).getName = 1;
+                return f;
+            }
+            if (((DefineValue) f).getName == 1 && ((DefineValue) f).getValue == 0) {
+                Value v = r.eval(s);
+                ((DefineValue) f).v = (FunValue) v;
+                ((DefineValue) f).getValue = 1;
+                return f;
+            }
+            Env E = new Env(((DefineValue) f).E, ((DefineValue) f).v.x, r);
+            if (((DefineValue) f).E.get_expr(Symbol.symbol("a")) == null) {
+                E = E.compose(s.E);
+            }
+            s = State.of(E, s.M, s.p);
+            if (((DefineValue) f).v.e instanceof Cond) {
+                Expr cond = new Cond(((DefineValue) f).E.get_expr(Symbol.symbol("a")), s.E.get_expr(Symbol.symbol("b")), s.E.get_expr(Symbol.symbol("c")));
+                Value v = cond.eval(s);
+                return v;
+            }
+            FunValue newf =  new FunValue(E, ((Fn)((DefineValue) f).v.e).x, ((Fn)((DefineValue) f).v.e).e);
+            return new DefineValue(E, ((Fn)((DefineValue) f).v.e).x, newf);
+        }
         Value v = r.eval(s);
         Env E = new Env(((FunValue) f).E, ((FunValue) f).x, v);
         State s1 = State.of(E, s.M, s.p);

@@ -1,0 +1,4 @@
+defmacro myif (fn a => fn b => fn c => if a then b else c);
+let fact = rec f => fn x => myif (x=1) 1 (x * (f (x-1)))
+in  fact 6
+end
