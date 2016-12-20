@@ -74,5 +74,6 @@ public class Interpreter {
         interpret("doc/examples/pcf.twice.spl");
         interpret("doc/examples/pcf.lists.spl");
         interpret("doc/examples/define.spl", 1);
+        interpret("doc/examples/gc.spl");
     }
 }

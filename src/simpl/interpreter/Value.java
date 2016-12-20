@@ -6,4 +6,6 @@ public abstract class Value {
     public static final Value UNIT = new UnitValue();
 
     public abstract boolean equals(Object other);
+
+    public int mark = 0;
 }

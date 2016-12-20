@@ -48,6 +48,9 @@ public class Env {
         return null;
     }
 
+    public Env getE(){
+        return E;
+    }
     public Expr get_expr(Symbol y) {
         // TODO
         if (x == y) return expr;

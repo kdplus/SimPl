@@ -1,0 +1,3 @@
+let a = ref ref 1 in
+	a := ref 2
+end
