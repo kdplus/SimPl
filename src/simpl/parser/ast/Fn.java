@@ -39,10 +39,6 @@ public class Fn extends Expr {
     public Value eval(State s) throws RuntimeError {
         // TODO
         // a are not eval
-        if (s.E.v == null) {
-            s.E.v = s.E.expr.eval(s);
-            return e.eval(s);
-        }
         FunValue v = new FunValue(s.E, x, e);
         return v;
     }

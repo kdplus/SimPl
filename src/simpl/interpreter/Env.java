@@ -58,6 +58,14 @@ public class Env {
         return null;
     }
 
+    public void get_expr_pos(Symbol y, Value v) {
+        if (x == y) {
+            this.v = v;
+            return;
+        }
+        if (E != null) this.E.get_expr_pos(y, v);
+    }
+
     public Env compose(Env E2) {
         // TODO
         if (E2 == null) return this.E;

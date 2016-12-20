@@ -37,6 +37,7 @@ public class App extends BinaryExpr {
     public Value eval(State s) throws RuntimeError {
         // TODO
         Value f = l.eval(s);
+        // (s.E.get(((FunValue)f).x) == null && s.E.get_expr(((FunValue)f).x) != null))
         if (f instanceof DefineValue) {
             if (((DefineValue) f).getName == 0 && r instanceof Name){
                 ((DefineValue) f).x = Symbol.symbol(r.toString());

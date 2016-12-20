@@ -30,6 +30,11 @@ public class Name extends Expr {
     public Value eval(State s) throws RuntimeError {
         // TODO
         Value v = s.E.get(x);
+        if (v == null && s.E.get_expr(x) != null) {
+            v = s.E.get_expr(x).eval(s);
+            s.E.get_expr_pos(x, v);
+            return v;
+        }
         if (v instanceof  RecValue) {
             RecValue nv = (RecValue)v;
             Rec rec = new Rec(nv.x, nv.e);

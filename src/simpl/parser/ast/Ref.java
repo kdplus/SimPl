@@ -30,21 +30,21 @@ public class Ref extends UnaryExpr {
     @Override
     public Value eval(State s) throws RuntimeError {
         // TODO
-        Int p = new Int(s.p.get());
 
-        if (p.get() > 1) {
+        if (s.p.get() > 1) {
             System.out.println("GC start!!!!");
             Env E = s.E;
             while (E != Env.empty) {
-                while (E.v.getClass().toString().intern() == "class simpl.interpreter.RefValue" && E.v.mark == 0){
+                // v might be null cause lazy
+                while (E.v != null && E.v.getClass().toString().intern() == "class simpl.interpreter.RefValue" && E.v.mark == 0){
                     E.v.mark = 1;
                     //if (E.v instanceof RefValue)
                       //  E.v = s.M.get(((RefValue) E.v).p);
                 }
-                E.v.mark = 1;
+                if (E.v != null) E.v.mark = 1;
                 E = E.getE();
             }
-            for (int i = 0; i < p.get(); ++i) {
+            for (int i = 0; i < s.p.get(); ++i) {
                 if (s.M.get(i).mark == 0) {
                     System.out.println("Collect");
                     System.out.println(i);
